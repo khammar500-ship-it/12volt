@@ -19,7 +19,7 @@ function Login() {
         setLoading(true);
 
         try {
-            const response = await fetch("http://12volt.cemsbankcentral.com/api/dascbord/loginadmin", {
+            const response = await fetch("https://12volt.cemsbankcentral.com/api/dascbord/loginadmin", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
