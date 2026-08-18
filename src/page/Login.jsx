@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import bg from "../assets/Media_Block.png";
 import big_logo from "../assets/big_logo.png";
 import v1 from "../assets/Vectorlogin1.png";
 import v2 from "../assets/Vectorlogin2.png";
 import v3 from "../assets/Vectorlogin3.png";
+
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
 
     const navigate = useNavigate();
 
@@ -17,31 +18,35 @@ function Login() {
         e.preventDefault();
 
         setLoading(true);
+        setError(false);
 
         try {
-            const response = await fetch("https://12volt.cemsbankcentral.com/api/dascbord/loginadmin", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    email: email,
-                    password: password,
-                }),
-            });
+            const response = await fetch(
+                "https://12volt.cemsbankcentral.com/api/dascbord/loginadmin",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password,
+                    }),
+                }
+            );
 
             const data = await response.json();
 
-            if (response.ok) {
-                console.log("Login successful:", data);
+            console.log("Login response:", data);
 
-                // الانتقال إلى Main.jsx
+            if (response.ok) {
                 navigate("/Home");
             } else {
-                console.log("Login failed:", data);
+                setError(true);
             }
         } catch (error) {
             console.error("Error:", error);
+            setError(true);
         } finally {
             setLoading(false);
         }
@@ -57,7 +62,7 @@ function Login() {
                 drop-shadow-[0_0_25px_rgba(0,0,0,0.8)]
                 overflow-hidden
             "
-            style={{ backgroundImage: `url(${bg})` }}
+            style={{ backgroundImage:`url(${ bg })` }}
         >
             {/* Logo */}
             <img
@@ -80,7 +85,6 @@ function Login() {
                 "
                 onSubmit={handleSubmit}
             >
-
                 {/* Email */}
                 <div className="flex flex-col mb-5">
                     <label className="flex gap-2 mb-3 items-center">
@@ -114,13 +118,14 @@ function Login() {
                         required
                     />
                 </div>
-
                 {/* Password */}
                 <div className="flex flex-col mb-7">
                     <label className="flex gap-2 mb-3 items-center">
                         <div className="w-7 h-7 flex items-center justify-center">
                             <img src={v1} alt="Password" />
-                        </div><div className="text-xl text-white">
+                        </div>
+
+                        <div className="text-xl text-white">
                             Password
                         </div>
                     </label>
@@ -146,6 +151,13 @@ function Login() {
                         required
                     />
                 </div>
+
+                {/* Error Message */}
+                {error && (
+                    <p className="text-red-400 text-center mb-5 text-lg">
+                        Please check your email or password.
+                    </p>
+                )}
 
                 {/* Login Button */}
                 <button
