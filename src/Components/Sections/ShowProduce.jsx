@@ -52,7 +52,8 @@ function ShowProduce() {
 
             console.log("Delete:", result);
 
-            if (result.status === true) {
+            if (result.status === true ||
+                result.status === "true") {
                 // إعادة جلب المنتجات من API
                 await getProduce();
             }
@@ -60,7 +61,15 @@ function ShowProduce() {
             console.error("Delete error:", error);
         }
     };
+    useEffect(() => {
+        getProduce();
 
+        window.addEventListener("ProduceAdded", getProduce);
+
+        return () => {
+            window.removeEventListener("ProduceAdded", getProduce);
+        };
+    }, []);
     useEffect(() => {
         getProduce();
     }, []);
@@ -70,16 +79,17 @@ function ShowProduce() {
     }
 
     return (
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+        <section className="flex gap-6 p-3  overflow-x-auto items-start">
             {produse.map((produce) => (
-                <Card1
-                    key={produce.id}
-                    image={produce.photo}
-                    text={produce.name_en}
-                    row={produce.description_en}
-                    price={produce.price}
-                    onDelete={() => handleDelete(produce.id)}
-                />
+                <div key={produce.id} className="flex-shrink-0 w-[350px]">
+                    <Card1
+                        image={produce.photo}
+                        text={produce.name_en}
+                        row={produce.description_en}
+                        price={produce.price}
+                        onDelete={() => handleDelete(produce.id)}
+                    />
+                </div>
             ))}
         </section>
     );

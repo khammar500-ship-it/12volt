@@ -5,3 +5,6 @@ body,html,#root {
 button {
     cursor: pointer;
 }
+body{
+    background-color: rgb(246, 232, 211);
+}

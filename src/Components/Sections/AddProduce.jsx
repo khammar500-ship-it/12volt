@@ -144,12 +144,13 @@ export default function AddProduct() {
 
       setImage(null);
       setPreview(null);
-
+      window.dispatchEvent(new Event("ProduceAdded"));
       // إغلاق الفورم بعد ثانية ونصف
       setTimeout(() => {
         setShowForm(false);
         setMessage("");
       }, 1500);
+      
     } catch (error) {
       console.error("Add Product Error:", error);
 

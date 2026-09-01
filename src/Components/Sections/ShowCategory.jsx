@@ -77,7 +77,15 @@ function ShowCategory() {
     useEffect(() => {
         getCategories();
     }, []);
+    useEffect(() => {
+        getCategories();
 
+        window.addEventListener("categoryAdded", getCategories);
+
+        return () => {
+            window.removeEventListener("categoryAdded", getCategories);
+        };
+    }, []);
     if (loading) {
         return (
             <p className="text-center">

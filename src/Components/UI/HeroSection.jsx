@@ -10,8 +10,6 @@ function HeroSection({ name }) {
 
         <div className="mt-2 h-1 w-16 bg-yellow-400 rounded-full" />
       </div>
-
-      <div className="hidden sm:block h-px flex-1 bg-gray-200 ml-8" />
     </div>
   );
 }

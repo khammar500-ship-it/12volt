@@ -55,6 +55,7 @@ export default function AddCategory() {
       }
       console.log("API Response:", result);
       setMessage("تمت إضافة النوع بنجاح ");
+      window.dispatchEvent(new Event("categoryAdded"));
       // تنظيف الفورم
       setFormData({
 
