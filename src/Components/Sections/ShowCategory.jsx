@@ -88,8 +88,8 @@ function ShowCategory() {
     }, []);
     if (loading) {
         return (
-            <p className="text-center">
-                Loading...
+            <p className="text-center text-2xl font-bold text-amber-400">
+                انتظر التحميل<span className="loading-dots"></span>
             </p>
         );
     }
@@ -100,7 +100,7 @@ function ShowCategory() {
                 <Card1
                     key={category.id}
                     image={category.photo}
-                    text={category.name_en}
+                    text={category.name_ar}
                     onDelete={() =>
                         handleDelete(category.id)
                     }

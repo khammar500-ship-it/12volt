@@ -2,7 +2,7 @@ import React from "react";
 
 function HeroSection({ name }) {
   return (
-    <div className="w-full flex items-center justify-between my-8">
+    <div className="w-full flex items-center justify-between my-8 pr-2">
       <div>
         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-800">
           {name}

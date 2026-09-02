@@ -67,7 +67,9 @@ function ShowPodcast() {
     }, []);
 
     if (loading) {
-        return <p className="text-center">Loading...</p>;
+        return <p className="text-center text-2xl font-bold text-amber-400">
+                انتظر التحميل<span className="loading-dots"></span>
+            </p>;
     }
 
     return (

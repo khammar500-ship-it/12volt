@@ -43,7 +43,7 @@ function Card1({ image, text, row, price, onDelete }) {
       </div>
       {price !== null && price !== undefined && (
         <div className="px-4 py-3 font-bold text-blue-600">
-          The price: {price} $
+          السعر: {price} $
         </div>
       )}
       {/* المعلومات الإضافية */}

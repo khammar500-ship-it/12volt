@@ -90,7 +90,7 @@ export default function AddCategory() {
         onClick={() => setShowForm(true)}
         className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-6 py-3 rounded-xl shadow-md transition duration-200 flex items-center gap-2">
         <span className="text-xl">+</span>
-        Add Category
+        اضافة نوع
       </button>
       {showForm && (
         <div className=" fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 ">
@@ -212,10 +212,10 @@ export default function AddCategory() {
               <div className="flex justify-end gap-3 pt-3">
 
                 <button type="button" onClick={() => setShowForm(false)} className=" px-6 py-3 rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-100 transition">
-                  Cancel
+                  اغلاق
                 </button>
                 <button type="submit" disabled={loading} className=" px-6 py-3 rounded-xl bg-yellow-400 hover:bg-yellow-500 disabled:bg-gray-300 disabled:cursor-not-allowed text-black font-bold transition ">
-                {loading ? "Adding..." : "Add Category"}
+                {loading ? "انظار الاضافة..." : "اضافة نوع"}
                 </button>
               </div>
             </form>

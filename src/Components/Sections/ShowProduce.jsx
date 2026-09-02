@@ -75,7 +75,9 @@ function ShowProduce() {
     }, []);
 
     if (loading) {
-        return <p className="text-center">Loading...</p>;
+        return <p className="text-center text-2xl font-bold text-amber-400">
+                انتظر التحميل<span className="loading-dots"></span>
+            </p>;
     }
 
     return (
@@ -84,8 +86,8 @@ function ShowProduce() {
                 <div key={produce.id} className="flex-shrink-0 w-[350px]">
                     <Card1
                         image={produce.photo}
-                        text={produce.name_en}
-                        row={produce.description_en}
+                        text={produce.name_ar}
+                        row={produce.description_ar}
                         price={produce.price}
                         onDelete={() => handleDelete(produce.id)}
                     />

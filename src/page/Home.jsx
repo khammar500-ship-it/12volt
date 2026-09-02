@@ -11,12 +11,12 @@ function Home() {
     <div>
       <Navbar />
       <div >
-        <HeroSection name="Category"/>
+        <HeroSection name="الانواع"/>
         <AddCategory />
         <ShowCategory />
       </div>
       <div>
-        <HeroSection name="Product" />
+        <HeroSection name="المنتجات" />
         <AddProduct />
         <ShowProduce />
       </div>

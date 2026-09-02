@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import logo from "../../assets/big_logo.png";
@@ -7,10 +7,12 @@ function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const links = [
-        { name: "Home", path: "/Home" },
-        { name: "Podcast", path: "/podcast" },
-        { name: "Message", path: "/message" },
-        { name: "Customer", path: "/customer" },
+        { name: "الصفحة الرئيسية", path: "/home"},
+        { name: "سلاسدر", path : "/slider"},
+        { name: "الشكاى", path: "/podcast"},
+        { name: "الطلبات", path: "/message"},
+        { name: "الذبائن", path: "/customer"}
+        
     ];
 
     return (

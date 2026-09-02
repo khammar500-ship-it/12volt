@@ -174,7 +174,7 @@ export default function AddProduct() {
         "
       >
         <span className="text-xl">+</span>
-        Add Product
+        إضافة منتج
       </button>
 
       {/* ================= MODAL ================= */}
@@ -189,7 +189,7 @@ export default function AddProduct() {
             <div className="flex justify-between items-center mb-6">
 
               <h2 className="text-2xl font-bold text-gray-800">
-                Add Product
+                إضافة منتج
               </h2>
 
               <button
@@ -212,7 +212,7 @@ export default function AddProduct() {
               <div>
 
                 <label className="block mb-2 font-semibold text-gray-700">
-                  Category
+                  النوع
                 </label>
 
                 <select name="catogry_id"
@@ -224,8 +224,8 @@ export default function AddProduct() {
 
                   <option value="">
                     {categoriesLoading
-                      ? "Loading categories..."
-                      : "Select Category"}
+                      ? "انتظر تحمل الانواع..."
+                      : "اختر نوع"}
                   </option>
 
                   {categories.map((category) => (
@@ -233,7 +233,7 @@ export default function AddProduct() {
                       key={category.id}
                       value={category.id}
                     >
-                      {category.name_en}
+                      {category.name_ar}
                     </option>
                   ))}
 
@@ -444,7 +444,7 @@ export default function AddProduct() {
               onClick={() => setShowForm(false)}
               className="  px-6  py-3  rounded-xl  border  border-gray-300  text-gray-700  hover:bg-gray-100  transition"
             >
-              Cancel
+              اغلاق
             </button>
 
             <button
@@ -453,8 +453,8 @@ export default function AddProduct() {
               className="  px-6  py-3  rounded-xl  bg-yellow-400  hover:bg-yellow-500  disabled:bg-gray-300  disabled:cursor-not-allowed  text-black  font-bold  transition"
             >
               {loading
-                ? "Adding..."
-                : "Add Product"}
+                ? "انظر الاضافة..."
+                : "اضف المنتج"}
             </button>
 
           </div>

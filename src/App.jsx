@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import Podcast from './page/Podcast.jsx'
 import Message from './page/Message.jsx'
 import Customer from './page/Customer.jsx'
+import Slider from './page/Slider.jsx'
 function App() {
   return (
     <Routes>
@@ -13,6 +14,7 @@ function App() {
       <Route path="/podcast" element={<Podcast/>} />
       <Route path="/message" element={<Message />} />
       <Route path="/customer" element={<Customer />} />
+      <Route path="/slider" element={<Slider/>} />
     </Routes>
   )
 }
