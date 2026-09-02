@@ -8,8 +8,8 @@ function Navbar() {
 
     const links = [
         { name: "الصفحة الرئيسية", path: "/home"},
-        { name: "سلاسدر", path : "/slider"},
-        { name: "الشكاى", path: "/podcast"},
+        { name: "سلايدر", path : "/slider"},
+        { name: "الشكاوي", path: "/podcast"},
         { name: "الطلبات", path: "/message"},
         { name: "الذبائن", path: "/customer"}
         
