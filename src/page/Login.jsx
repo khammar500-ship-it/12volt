@@ -93,7 +93,7 @@ function Login() {
                         </div>
 
                         <div className="text-xl text-white">
-                            Email
+                            البريد الالكتروني :
                         </div>
                     </label>
 
@@ -126,7 +126,7 @@ function Login() {
                         </div>
 
                         <div className="text-xl text-white">
-                            Password
+                            كلمة المرور
                         </div>
                     </label>
 
@@ -155,7 +155,7 @@ function Login() {
                 {/* Error Message */}
                 {error && (
                     <p className="text-red-400 text-center mb-5 text-lg">
-                        Please check your email or password.
+                        كلمة المرور او الايميل خاطئة 
                     </p>
                 )}
 
@@ -181,7 +181,7 @@ function Login() {
                     disabled={loading}
                 >
                     <span>
-                        {loading ? "LOGIN..." : "LOGIN"}
+                        {loading ? "...." : "تسجيل الدخول"}
                     </span>
 
                     <img
